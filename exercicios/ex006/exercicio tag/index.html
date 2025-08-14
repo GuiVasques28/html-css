@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Tag exercicio</title>
+    <style>
+        li {
+            position: relative;
+            cursor: pointer;
+        
+        }
+        li:hover::after {
+            content: attr(data-tag); /* Pega o segredo */
+            position: relative;
+            bottom: -auto;
+            left: 0%;
+            transform: translateX(-50%);
+            background-color: rgb(96, 96, 96);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            white-space: nowrap; /* Impede a quebra de linha */
+        }
+      
+
+    </style>
+</head>
+<body>
+    <h1>Tags em HTML5</h1>
+   <p>Em HTML5 podemos inserir elementos da lista a seguir, passe o maouse sobre os termos para descobrir qual tag deverá utilizar em cada caso.</p>
+    
+  <li data-tag= " use a tag &lt;p&gt;">Paragrafos</li>
+    <li data-tag= " use a tag&lt;img&gt;">Imagens</li>
+    <li data-tag=" use a tag &lt;h1&gt;">Titúlo</li>
+    <li data-tag="use a tag &lt;p&gt; e cole o Emoji/código" >Emoji</li>
+        <li data-tag="use a tag &lt;br&gt;">Pular linhas ou finalizar paragráfos</li>
+    <li data-tag="use a tag &lt;!--&gt;">Comentário na linha de progamação</li>
+    <li data-tag="use a tag lorem">Criar texto aleatório</li>
+    <li data-tag="use a tag &lt;h2&gt;">Sub Título</li> 
+    <li data-tag="Clarinha&#128525;">Amor da minha vida</li>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+    <li data-tag="Deus na frente sempre">Vai dar tudo certo!</li> 
+    
+  
+</body>
+</html>
+
