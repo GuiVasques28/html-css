@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Imagem flexível</h1>
+    <p>Experimente **diminuir e aumentar** a largura da janela para ver a imagem mudando automaticamente!</p>
+
+  
+    <picture>
+        <!-- Imagem para telas GRANDES (acima de 1200px) -->
+        <source media="(min-width: 1200px)" srcset="metro-grande.jpg">
+    
+        <!-- Imagem para telas MÉDIAS (entre 768px e 1199px) -->
+        <source media="(min-width: 768px)" srcset="metro-media.jpg">
+    
+        <!-- Imagem para telas PEQUENAS (menos de 768px) -->
+        <img src="metro-pequeno.jpg" alt="Paisagem dinâmica">
+    </picture>
+    
+   
+</body>
+</html>

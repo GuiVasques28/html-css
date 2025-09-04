@@ -1,0 +1,16 @@
+@charset "UTF-8"; 
+*
+body {  
+    background-color: #f0f0f0;  
+    margin: 0;  
+    padding: 0;  
+  }
+  h1 {  
+    font-family: 'Lobster', cursive; /* Fonte enfeitada */  
+    color: red;  
+  }  
+  p {  
+    font-family: Arial, sans-serif; /* Fonte simples */  
+    font-size: 18px;  
+  }  
+  
