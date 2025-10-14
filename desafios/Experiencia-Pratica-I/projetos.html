@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projetos — Facilita ONGs</title>
+  <meta name="description" content="Conheça os projetos sociais da Facilita ONGs. Oportunidades de voluntariado e formas de doar.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Página inicial Facilita ONGs">
+        <img src="images/logo.png" alt="Logo Facilita ONGs" class="logo-img">
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-header">
+      <h1>Projetos Sociais</h1>
+      <p>Conheça nossas iniciativas e como você pode ajudar — seja como voluntário ou doador.</p>
+    </header>
+
+    <section aria-labelledby="lista-projetos" class="projects-list">
+      <h2 id="lista-projetos">Projetos em Andamento</h2>
+
+      <article class="project" aria-labelledby="proj-alfabetizacao">
+        <h3 id="proj-alfabetizacao">Projeto Alfabetização</h3>
+        <figure>
+          <img src="images/proj-alfabetizacao.jpg" alt="Crianças em aula de alfabetização" class="responsive-img" loading="lazy">
+          <figcaption>Oficinas de leitura e escrita.</figcaption>
+        </figure>
+        <p>Atendemos crianças e adolescentes com aulas semanais e materiais didáticos.</p>
+        <p>
+          <a href="#voluntario" class="btn">Quero ser voluntário</a>
+          <a href="#" class="btn secondary">Doar para este projeto</a>
+        </p>
+      </article>
+
+      <article class="project" aria-labelledby="proj-saude">
+        <h3 id="proj-saude">Clínica Comunitária</h3>
+        <figure>
+          <img src="images/proj-saude.jpg" alt="Atendimento em clínica comunitária" class="responsive-img" loading="lazy">
+          <figcaption>Atendimentos de saúde básicos e orientações.</figcaption>
+        </figure>
+        <p>Consultas e campanhas de prevenção em parceria com profissionais voluntários.</p>
+        <p>
+          <a href="#voluntario" class="btn">Quero ser voluntário</a>
+          <a href="#" class="btn secondary">Doar</a>
+        </p>
+      </article>
+    </section>
+
+    <aside aria-labelledby="voluntariado" class="side">
+      <h2 id="voluntariado">Voluntariado</h2>
+      <p id="voluntario">Inscreva-se como voluntário em nossa página de cadastro.</p>
+      <p><a href="cadastro.html">Ir para cadastro</a></p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="ano2"></span> Facilita ONGs</p>
+    <script>document.getElementById('ano2').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

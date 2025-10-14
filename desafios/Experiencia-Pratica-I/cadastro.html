@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro de Voluntário — ONG Exemplo</title>
+  <meta name="description" content="Formulário de cadastro para voluntários e apoiadores.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#form-cadastro">Ir para o formulário</a>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Página inicial Facilita ONGs">
+        <img src="images/logo.png" alt="Logo Facilita ONGs" width="150" height="50">
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="page-header">
+      <h1>Cadastro</h1>
+      <p>Preencha seus dados para participar como voluntário ou apoiador.</p>
+    </header>
+
+    <section aria-labelledby="formulario">
+      <h2 id="formulario">Formulário de Cadastro</h2>
+
+      <form id="form-cadastro" action="#" method="post" novalidate>
+        <!-- Dados Pessoais -->
+        <fieldset>
+          <legend>Dados Pessoais</legend>
+
+          <label for="nome">Nome Completo <span aria-hidden="true">*</span></label>
+          <input id="nome" name="nome" type="text" required minlength="3" placeholder="Nome completo" autocomplete="name">
+
+          <label for="cpf">CPF <span aria-hidden="true">*</span></label>
+          <input id="cpf" name="cpf" type="text" required inputmode="numeric" placeholder="000.000.000-00"
+                 pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$" aria-describedby="cpf-help">
+
+          <small id="cpf-help">Formato: 000.000.000-00</small>
+
+          <label for="nascimento">Data de Nascimento</label>
+          <input id="nascimento" name="nascimento" type="date" max="" aria-describedby="idade-help">
+          <small id="idade-help">Informe sua data de nascimento.</small>
+        </fieldset>
+
+        <!-- Contato -->
+        <fieldset>
+          <legend>Contato</legend>
+
+          <label for="email">E-mail <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" required placeholder="seu@email.com">
+
+          <label for="telefone">Telefone <span aria-hidden="true">*</span></label>
+          <input id="telefone" name="telefone" type="tel" inputmode="tel" required placeholder="(11) 9xxxx-xxxx"
+                 pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" aria-describedby="tel-help">
+          <small id="tel-help">Formato: (11) 91234-5678</small>
+        </fieldset>
+
+        <!-- Endereço -->
+        <fieldset>
+          <legend>Endereço</legend>
+
+          <label for="cep">CEP <span aria-hidden="true">*</span></label>
+          <input id="cep" name="cep" type="text" inputmode="numeric" required placeholder="00000-000"
+                 pattern="^\d{5}-?\d{3}$" aria-describedby="cep-help">
+
+          <label for="logradouro">Endereço (Rua, Av)</label>
+          <input id="logradouro" name="logradouro" type="text" placeholder="Rua Exemplo">
+
+          <label for="numero">Número</label>
+          <input id="numero" name="numero" type="text" inputmode="numeric" placeholder="123">
+
+          <label for="complemento">Complemento</label>
+          <input id="complemento" name="complemento" type="text" placeholder="Apto, bloco">
+
+          <label for="cidade">Cidade</label>
+          <input id="cidade" name="cidade" type="text" placeholder="Cidade">
+
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado" required>
+            <option value="">Selecione</option>
+            <option value="SP">SP</option>
+            <option value="RJ">RJ</option>
+            <option value="MG">MG</option>
+            <option value="BA">BA</option>
+            <!-- complete conforme necessário -->
+          </select>
+        </fieldset>
+
+        <!-- Consentimento -->
+        <fieldset>
+          <legend>Consentimento</legend>
+          <label>
+            <input type="checkbox" id="termos" name="termos" required>
+            Declaro que li e concordo com a política de privacidade e uso dos meus dados.
+          </label>
+        </fieldset>
+
+        <button type="submit">Enviar cadastro</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="ano3"></span> ONG Exemplo</p>
+    <script>document.getElementById('ano3').textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script src="js/masks.js" defer></script>
+  <script>
+    // Ajuste máximo de data para validar data de nascimento com exemplo (não obrigatório)
+    (function(){
+      const maxDateEl = document.getElementById('nascimento');
+      if(maxDateEl){
+        const today = new Date().toISOString().split('T')[0];
+        maxDateEl.setAttribute('max', today);
+      }
+      // Keep native validation but allow custom messages if needed:
+      const form = document.getElementById('form-cadastro');
+      form.addEventListener('submit', function(ev){
+        if(!form.checkValidity()){
+          // Deixe o navegador mostrar as mensagens nativas
+          ev.preventDefault();
+        } else {
+          // aqui normalmente enviaria (POST) para servidor
+          ev.preventDefault();
+          alert('Formulário válido — envio simulado (substitua ação do form).');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

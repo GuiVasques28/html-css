@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Facilita ONGs — Sobre</title>
+  <meta name="description" content="Facilita ONGs — missão, valores e contato. Trabalhando por impacto social."/>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Página inicial Facilita ONGs">
+        <picture>
+          <source srcset="images/logo.png" type="image/webp">
+          <img src="images/logo.png" alt="Logo Facilita ONGs" width="150" height="50">
+        </picture>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <figure>
+        <picture>
+          <source srcset="images/voluntarios.jpg" type="image/webp">
+          <img src="images/voluntarios.jpg" alt="Voluntários trabalhando em comunidade" sizes="(max-width:600px) 100vw, 1200px" loading="lazy">
+        </picture>
+        <figcaption>Voluntários em ação — projeto de inclusão.</figcaption>
+      </figure>
+      <div class="hero-text">
+        <h1 id="hero-title">ONG Exemplo — Transformando realidades</h1>
+        <p>Somos uma organização sem fins lucrativos dedicada a promover educação, saúde e inclusão social em comunidades vulneráveis.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="missao">
+      <h2 id="missao">Missão, Visão e Valores</h2>
+      <article>
+        <h3>Missão</h3>
+        <p>Promover oportunidades e dignidade através de ações comunitárias e projetos sustentáveis.</p>
+      </article>
+      <article>
+        <h3>Visão</h3>
+        <p>Ser referência local em projetos sociais que geram impacto mensurável.</p>
+      </article>
+      <article>
+        <h3>Valores</h3>
+        <ul>
+          <li>Transparência</li>
+          <li>Respeito</li>
+          <li>Colaboração</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="conquistas">
+      <h2 id="conquistas">Histórico e Conquistas</h2>
+      <p>Nossa ONG já beneficiou mais de 2.000 pessoas com cursos e atendimentos.</p>
+    </section>
+
+    <aside aria-labelledby="contato-rapido" class="contact-aside">
+      <h2 id="contato-rapido">Contato Rápido</h2>
+      <address>
+        <p>Rua Exemplo, 100 — Centro — Cidade/UF</p>
+        <p>Telefone: <a href="tel:+5511999999999">(11) 99999-9999</a></p>
+        <p>Email: <a href="mailto:contato@ongexemplo.org">contato@ongexemplo.org</a></p>
+      </address>
+      <p><a href="projetos.html">Veja nossos projetos</a></p>
+    </aside>
+  </main>
+
+  <footer>
+    <section class="transparency" aria-labelledby="transparency">
+      <h2 id="transparency">Transparência</h2>
+      <p><a href="relatorios/transparencia.pdf">Relatórios e prestação de contas</a></p>
+    </section>
+    <p>&copy; <span id="ano"></span> Facilita ONGs — Todos os direitos reservados.</p>
+    <script>
+      // pega o ano atual
+      document.getElementById('ano').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
