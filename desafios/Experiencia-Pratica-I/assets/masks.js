@@ -1,4 +1,7 @@
 // masks.js - pequenas máscaras para CPF, telefone e CEP
+
+const APIUrl = 'https://viacep.com.br/ws/01001000/json/';
+
 (function(){
   'use strict';
 
@@ -30,13 +33,36 @@
     const el = document.querySelector(selector);
     if(!el) return;
     el.addEventListener('input', function(ev){
-      const pos = el.selectionStart;
       const old = el.value;
       const newVal = masker(old);
       el.value = newVal;
+
       // tenta restaurar caret em lugar decente (simples)
       try { el.setSelectionRange(newVal.length, newVal.length); } catch(e){}
+
+      // Se for o campo CEP e o valor estiver completo (8 dígitos)
+      if(selector === '#cep'){
+        const cep = onlyDigits(newVal);
+        if(cep.length === 8){
+          buscarCEP(cep);
+        }
+      }
     });
+  }
+
+  // Função para buscar dados do CEP usando a API ViaCEP
+  function buscarCEP(cep){
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      .then(response => response.json())
+      .then(data => {
+        if(data.erro) return;
+        // Preenche automaticamente os campos se existirem no formulário
+        if(document.querySelector('#endereco')) document.querySelector('#endereco').value = data.logradouro || '';
+        if(document.querySelector('#bairro')) document.querySelector('#bairro').value = data.bairro || '';
+        if(document.querySelector('#cidade')) document.querySelector('#cidade').value = data.localidade || '';
+        if(document.querySelector('#estado')) document.querySelector('#estado').value = data.uf || '';
+      })
+      .catch(err => console.error('Erro ao buscar CEP:', err));
   }
 
   document.addEventListener('DOMContentLoaded', function(){
