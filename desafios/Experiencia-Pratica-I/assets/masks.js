@@ -1,4 +1,4 @@
-// masks.js - pequenas máscaras para CPF, telefone e CEP
+
 
 const APIUrl = 'https://viacep.com.br/ws/01001000/json/';
 
